@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EasyChem</string>
+    <string name="title_themes">Themes</string>
+    <string name="title_tests">Dashboard</string>
+    <string name="title">Title</string>
+    <!--    <string name="title_notifications">Notifications</string>-->
+</resources>
