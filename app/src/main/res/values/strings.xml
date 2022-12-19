@@ -3,5 +3,7 @@
     <string name="title_themes">Themes</string>
     <string name="title_tests">Dashboard</string>
     <string name="title">Title</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--    <string name="title_notifications">Notifications</string>-->
 </resources>
