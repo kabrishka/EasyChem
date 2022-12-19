@@ -11,29 +11,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
-        android:textSize="20sp"
+        android:textSize="25sp"
+        android:fontFamily="@font/raleway_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="30dp" />
 
     <TextView
         android:id="@+id/textViewNumTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:text="@string/title"
+        android:fontFamily="@font/raleway_light"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitleTest" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleTest"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"/>
 
     <ListView
         android:id="@+id/listViewTest"
+        android:fontFamily="@font/raleway_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitleTest" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumTask"
+        />
 
     <TextView
         android:id="@+id/textViewAnswer"
@@ -42,15 +50,24 @@
         android:text="@string/title"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonCheck"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/buttonCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Check"
+        android:fontFamily="@font/raleway_light"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAnswer" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextAnswer"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"/>
 
     <EditText
         android:id="@+id/editTextAnswer"
@@ -60,15 +77,21 @@
         android:inputType="textPersonName"
         android:hint="Your answer"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listViewTest" />
+        app:layout_constraintTop_toBottomOf="@+id/listViewTest"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
+        android:fontFamily="@font/raleway_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

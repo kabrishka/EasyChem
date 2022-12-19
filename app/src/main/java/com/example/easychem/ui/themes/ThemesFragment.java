@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -14,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.easychem.R;
-import com.example.easychem.ThemeDetailActivity;
 
 import org.xmlpull.v1.XmlPullParser;
 
@@ -43,23 +41,18 @@ public class ThemesFragment extends Fragment {
         if(parser.parse(xpp))
         {
             textViewTitle.setText(parser.getTitle());
-            for(Theme theme : parser.getThemes()) {
-                themes.add(theme);
-            }
+            themes.addAll(parser.getThemes());
         }
 
-        ArrayAdapter<Theme> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, themes);
+        ArrayAdapter<Theme> adapter = new ArrayAdapter<>(requireContext(), R.layout.theme_item, R.id.tvTheme ,themes);
         listViewThemes.setAdapter(adapter);
 
-        listViewThemes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Theme theme = themes.get(position);
-                Intent intent = new Intent(getContext(), ThemeDetailActivity.class);
-                intent.putExtra("title", theme.getTitle());
-                intent.putExtra("content", theme.getContent());
-                startActivity(intent);
-            }
+        listViewThemes.setOnItemClickListener((adapterView, view1, position, id) -> {
+            Theme theme = themes.get(position);
+            Intent intent = new Intent(getContext(), ThemeDetailActivity.class);
+            intent.putExtra("title", theme.getTitle());
+            intent.putExtra("content", theme.getContent());
+            startActivity(intent);
         });
         return view;
     }

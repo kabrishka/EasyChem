@@ -42,7 +42,7 @@ public class TestsFragment extends Fragment {
 
         tests_list = view.findViewById(R.id.listViewTests);
 
-        adapter_test = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, tests_title);
+        adapter_test = new ArrayAdapter(getContext(), R.layout.theme_item, R.id.tvTheme, tests_title);
         tests_list.setAdapter(adapter_test);
 
         tests_list.setOnItemClickListener(new AdapterView.OnItemClickListener(){

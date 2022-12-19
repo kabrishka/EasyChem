@@ -39,6 +39,7 @@ public class TestsDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tests_detail);
+        getSupportActionBar().hide();
 
         current_task = 0;
 

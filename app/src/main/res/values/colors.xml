@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="lunar_green">#384a3f</color>
+    <color name="wild_willow">#a6d16b</color>
+    <color name="msu_green">#18393f</color>
+    <color name="auto_metal_saurus">#5d7c7f</color>
+    <color name="grey">#b6b0b0</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
