@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1051301044253",
+    "project_id": "easy-chem",
+    "storage_bucket": "easy-chem.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051301044253:android:007ffd716b6f3d70bde6f4",
+        "android_client_info": {
+          "package_name": "com.example.easychem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051301044253-qlqf39q1n8uiq6mbuj93259brbse8hjo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.easychem",
+            "certificate_hash": "0e83576570702c70f0516d02a6676e201203006b"
+          }
+        },
+        {
+          "client_id": "1051301044253-ufj6fmj3nmalavii6bh23va9r0vkjdql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7kibAY-Vt6GplcsNu84TakmgmXgYVJXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051301044253-ufj6fmj3nmalavii6bh23va9r0vkjdql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
