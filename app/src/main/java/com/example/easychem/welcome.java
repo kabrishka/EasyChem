@@ -1,6 +1,5 @@
 package com.example.easychem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -13,10 +12,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.example.easychem.models.User;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,8 +21,6 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 public class welcome extends AppCompatActivity {
 
     private ConstraintLayout welcome_page;
-    private LinearLayout btnLogIn;
-    private LinearLayout btnRegister;
 
     //подключаем БД
     FirebaseAuth auth; //для авторизации
@@ -41,22 +35,18 @@ public class welcome extends AppCompatActivity {
         getSupportActionBar().hide();
 
         welcome_page = findViewById(R.id.welcome_page);
-        btnLogIn = findViewById(R.id.btnLogIn);
-        btnRegister = findViewById(R.id.btnRegister);
+        LinearLayout btnLogIn = findViewById(R.id.btnLogIn);
+        LinearLayout btnRegister = findViewById(R.id.btnRegister);
 
         auth = FirebaseAuth.getInstance(); //запуск авторизации в бд
         db =FirebaseDatabase.getInstance(); //поключение к бд
         users = db.getReference("Users");
 
 
-        btnLogIn.setOnClickListener(view -> {
-            showLogInWindow();
-        });
+        btnLogIn.setOnClickListener(view -> showLogInWindow());
 
 
-        btnRegister.setOnClickListener(view -> {
-            showRegisterWindow();
-        });
+        btnRegister.setOnClickListener(view -> showRegisterWindow());
 
 
     }
@@ -85,21 +75,15 @@ public class welcome extends AppCompatActivity {
                 Snackbar.make(welcome_page, "Please enter a password longer than 5 characters", Snackbar.LENGTH_SHORT).show();
                 return;
             }
+            //когда успешно авторизовлаись
             auth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
-                    .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                        //когда успешно авторизовлаись
-                        @Override
-                        public void onSuccess(AuthResult authResult) {
-                            startActivity(new Intent(welcome.this, MainActivity.class));
-                            finish();
-                        }
-
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Snackbar.make(welcome_page, "Error" + e.getMessage(), Snackbar.LENGTH_SHORT).show();
-                        }
-                    });
+                    .addOnSuccessListener(authResult -> {
+                        Intent intent = new Intent(welcome.this, MainActivity.class);
+                        intent.putExtra("user_email", email.getText().toString());
+                        intent.putExtra("user_pass", password.getText().toString());
+                        startActivity(intent);
+                        finish();
+                    }).addOnFailureListener(e -> Snackbar.make(welcome_page, "Error" + e.getMessage(), Snackbar.LENGTH_SHORT).show());
 
         });
         dialog.show();
@@ -146,7 +130,10 @@ public class welcome extends AppCompatActivity {
                         //ключ для пользователя
                         users.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnSuccessListener(unused -> {
                             Snackbar.make(welcome_page, "User added!", Snackbar.LENGTH_SHORT).show();
-                            startActivity(new Intent(welcome.this, MainActivity.class));
+                            Intent intent = new Intent(welcome.this, MainActivity.class);
+                            intent.putExtra("user_email", user.getEmail());
+                            intent.putExtra("user_pass", user.getPassword());
+                            startActivity(intent);
                             finish();
                         });
                     });

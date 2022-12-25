@@ -1,6 +1,5 @@
 package com.example.easychem;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +12,7 @@ import com.example.easychem.databinding.ActivityMainBinding;
 import com.example.easychem.models.User;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
+    public static User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.easychem.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        String email = getIntent().getStringExtra("user_email");
+        String pass = getIntent().getStringExtra("user_pass");
+        user = new User();
+        user.setEmail(email);
+        user.setPassword(pass);
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
