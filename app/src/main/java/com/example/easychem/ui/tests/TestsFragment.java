@@ -35,10 +35,10 @@ public class TestsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tests, container, false);
 
-        tests_title.add("test 1");
-        tests_title.add("test 2");
-        tests_title.add("test 3");
-        tests_title.add("test 4");
+        tests_title.add("Атомы и молекулы. Химический элемент. Простые и сложные вещества");
+        tests_title.add("Строение атома. Строение электронных оболочек атомов");
+        tests_title.add("Периодический закон и Периодическая система элементов");
+        tests_title.add("Валентность и степень окисления химических элементов");
 
         tests_list = view.findViewById(R.id.listViewTests);
 
