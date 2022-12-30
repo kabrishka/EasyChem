@@ -19,6 +19,6 @@
 
 <img width="184" alt="image" src="https://user-images.githubusercontent.com/99499702/210076193-eda118d2-230f-4fff-91b0-fa302372e36c.png"> <img width="184" alt="image" src="https://user-images.githubusercontent.com/99499702/210076208-1b12da80-fc3a-40d6-9e70-97d5137d7c17.png">
 
-## Наградная система
+### Наградная система
 
 <img width="218" alt="image" src="https://user-images.githubusercontent.com/99499702/210076265-f8998a2e-7778-4570-9b05-8c5a7c901bba.png">
